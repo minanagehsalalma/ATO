@@ -1,1 +1,1 @@
-# The Final/TargetRequest Has to require and only work with a cookie 
+# The Final/Target Request Has to require and only work with a cookie 
