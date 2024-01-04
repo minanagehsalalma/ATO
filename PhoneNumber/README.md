@@ -144,24 +144,25 @@ Request body :
 
 1. api/auth/phoneValidate/
 
-[Requesting Captcha]
+* Requesting First Captcha
 2. reset.php
 3. ajax.php
 4. get.php
 
-[Sending Captcha Solution]
+* Sending First Captcha Solution
 5. ajax.php
 
-[Finally Actually Requesting a verify code]
+* Finally Actually Requesting a verify code
 6. api/auth/sendUicsCode
 
-[Confirming the code shows another capcha
+* Confirming the code shows another Captcha
 7. reset.php
 8. ajax.php
 9. get.php
 
-[Sending Second Captcha Solution]
+* Sending Second Captcha Solution
+
 10. ajax.php
 
-[The Final Request]
+* The Final Request
 11. api/auth/aliasBind/update
