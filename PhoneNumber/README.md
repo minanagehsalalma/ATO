@@ -98,3 +98,44 @@ The Response:
     }
 }
 ```
+# Solving The captcha
+
+1. https://m.shein.com/roe/api/risk/geetest/ajax.php
+
+ (a post request with encrypted values)
+
+The Response:
+```json
+{"status":0,"data":{"result":"success","score":"38"},"token":""}
+```
+
+# The Final Request code Request 
+
+1. https://m.shein.com/roe/api/auth/sendUicsCode/get?_ver=1.1.8&_lang=en
+
+Request body :
+```json
+{"alias_type":2,"alias":"489921018","scene":"bind_msg_verify","third_party_type":8,"area_code":"61","area_abbr":"AU","verification_abt":"new","challenge":"a2fc1f8456bff4930933383ec6981c1c","gtRisk":"","blackbox":"","risk_id":"a8dca359-251b-404b-a306-0a75d53c75fe","risk_scene":"send_message","isGeetest":true}
+```
+The Response:
+```json
+{"code":"0","msg":"OK","info":{"is_send":1,"ttl":60}}
+```
+The verify code valid within 10 minutes
+
+# Confirm Code Shows a second captcha 
+
+1. reset 
+2. ajax.php
+3. get.php
+then the final request with the solved captcha answer
+4. ajax.php
+
+# Then the final confirm number with code request
+
+1. https://m.shein.com/roe/api/auth/aliasBind/update?_ver=1.1.8&_lang=en
+
+Request body :
+```json
+{"alias_type":2,"alias":"489921018","verification_code":"540045","area_code":"61","area_abbr":"AU","verify_qa":0,"bind_type":1,"force_bind":0,"bind_scene":"personalcenter","verify_switch":0,"daId":"2-8-22","verification_abt":"new","challenge":"eae8c1a5552259195cb0abb47c510e14","gtRisk":""}
+```
