@@ -128,6 +128,7 @@ The verify code valid within 10 minutes
 1. reset 
 2. ajax.php
 3. get.php
+
 then the final request with the solved captcha answer
 4. ajax.php
 
