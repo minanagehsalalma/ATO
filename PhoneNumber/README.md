@@ -1,4 +1,9 @@
 # Requesting code requests order
+Notes : the get.php gets the captcha image 
+ 
+
+https://github.com/minanagehsalalma/ATO/assets/20546638/9e21f91b-5598-4f62-bc07-b007a2b7cf50
+
 
 Essential
 1. https://m.shein.com/roe/api/auth/phoneValidate/get?_ver=1.1.8&_lang=en
