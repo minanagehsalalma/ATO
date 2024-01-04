@@ -140,3 +140,28 @@ Request body :
 ```json
 {"alias_type":2,"alias":"489921018","verification_code":"540045","area_code":"61","area_abbr":"AU","verify_qa":0,"bind_type":1,"force_bind":0,"bind_scene":"personalcenter","verify_switch":0,"daId":"2-8-22","verification_abt":"new","challenge":"eae8c1a5552259195cb0abb47c510e14","gtRisk":""}
 ```
+# Full order from start to finish 
+
+1. api/auth/phoneValidate/
+
+[Requesting Captcha]
+2. reset.php
+3. ajax.php
+4. get.php
+
+[Sending Captcha Solution]
+5. ajax.php
+
+[Finally Actually Requesting a verify code]
+6. api/auth/sendUicsCode
+
+[Confirming the code shows another capcha
+7. reset.php
+8. ajax.php
+9. get.php
+
+[Sending Second Captcha Solution]
+10. ajax.php
+
+[The Final Request]
+11. api/auth/aliasBind/update
