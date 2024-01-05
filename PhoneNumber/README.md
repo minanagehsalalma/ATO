@@ -5,18 +5,22 @@ Notes : the get.php gets the captcha image
 https://github.com/minanagehsalalma/ATO/assets/20546638/9e21f91b-5598-4f62-bc07-b007a2b7cf50
 
 
-Essential
+
 1. https://m.shein.com/roe/api/auth/phoneValidate/get?_ver=1.1.8&_lang=en
 
-(this one initiates the phone number adding or change)
+(this request just checks if a phone number is a vaild number or not as soon as you type it, it can be skipped)
 
 Request body :
 ```json
 {"alias_type":2,"alias":"489921018","area_code":"61","area_abbr":"AU"}
 ```
-The Response is always 
+The Response is always (if the phone number is correct)
 ```json
 {"code":0}
+```
+if the number is an invalid number
+```json
+{"code":-410,"msg":"Invalid phone number"}
 ```
 
 2. https://m.shein.com/roe/api/risk/geetest/reset.php
@@ -147,7 +151,7 @@ Request body :
 ```
 # Full order from start to finish 
 
-1. api/auth/phoneValidate/
+1. api/auth/phoneValidate/  (can be skipped)
 
 * Requesting First Captcha
 2. reset.php
